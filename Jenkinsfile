@@ -11,5 +11,11 @@ pipeline {
                   sh "mvn test"
               }
           }
+          stage("Code coverage") {
+               steps {
+                    sh "mvn jacoco:report"
+                    sh "mvn verify"
+               }
+          }
      }
 }
